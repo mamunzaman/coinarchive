@@ -1,0 +1,262 @@
+# CoinArchive Contributor App — Project Status
+
+## Completed Features
+- [x] React + Vite + TypeScript scaffold
+- [x] Tailwind CSS with premium collector theme
+- [x] Routing: `/register`, `/login`, `/dashboard`, `/new-coin`
+- [x] Layout shell with header and auth layout
+- [x] Role-aware route guards (admin `/admin/approve`, approved session required)
+- [x] Profile page with account, permissions, and session cards
+- [x] Header account menu with role badge, profile, and logout
+- [x] New Coin form connected to `/submit-coin` with Bearer token and FormData upload
+- [x] My Submissions page at `/my-submissions`
+- [x] Submission detail page at `/my-submissions/:id`
+- [x] Edit pending submission at `/my-submissions/:id/edit`
+- [x] Full ACF coin fields on New Coin, Edit, and Detail (Core, Specifications, Descriptions)
+- [x] Country, denomination, and coin type loaded from WP taxonomies with Other fallback
+- [x] Admin status controls and gallery upload on New Coin, Edit, and Detail
+- [x] Mint Information section on coin forms and detail page
+- [x] Archival wizard layout for New Coin and Edit Submission (focus mode, stepper, preview panel)
+- [x] MainLayout route switch ensures wizard pages bypass dashboard header
+- [x] My Submissions archive gallery with search, filter, sort, and table toggle
+- [x] CoinEuropa Archive brand design system (teal primary, editorial neutrals)
+- [x] Dashboard wired to real `/my-submissions` data (stats, recent list, quick actions)
+- [x] Responsive sidebar shell with top utility bar (desktop/iPad/mobile drawer)
+- [x] Desktop/iPad usability pass (sidebar, dashboard, submissions, wizard, form controls)
+- [x] Editorial catalogue layout for Submission Detail page
+- [x] Mint variant mint mark code dropdown (Berlin, Munich, Stuttgart, Karlsruhe, Hamburg)
+- [x] Inline image editing on Submission Detail page (pending submissions)
+- [x] Auto-save live image updates on Submission Detail (obverse, reverse, gallery)
+- [x] Gallery replace, remove-from-gallery, and admin permanent delete (Edit Wizard + Detail)
+- [x] Delete submission action (detail + My Submissions list)
+- [x] Unsaved changes guard (wizard forms + navigation)
+- [x] Detail image edit blocks delete until Done
+- [x] Lucide icon actions across dashboard and submissions UI
+- [x] Form autosave draft (localStorage, per submission ID, 10s interval)
+- [x] Duplicate coin warning (country/year/denomination/type/mint, non-blocking)
+- [x] Image quality checklist + catalogue readiness score (live sidebar)
+- [x] Review Submission wizard step before submit
+- [x] Field help tooltips (mint, mintage, edge, material, weight, diameter, designer/theme)
+- [x] Save draft + dashboard saved drafts (local + server draft status)
+- [x] Admin revision notes UI (detail, edit, dashboard-ready types)
+- [x] Image cropper (react-easy-crop) for obverse/reverse/gallery
+- [x] Contributor statistics on Profile page
+- [x] Submission timeline on detail page
+- [x] Live catalogue preview card on New/Edit coin wizard
+- [x] Dashboard Activity Center + Quality Alerts
+- [x] Revision comparison (needs revision submissions)
+- [x] Live coin ID preview on core identity step
+- [x] Submission activity timeline from WP activity_logs API
+- [x] Image cropper controls (zoom, rotation, fit, 1:1/free, live preview)
+- [x] Compact gallery cards with overlay icon actions + Add & crop tile
+- [x] Free crop with resizable stencil (react-advanced-cropper)
+- [x] Edit wizard save actions in page header (Save draft / Save changes)
+- [x] Edit wizard save actions duplicated in footer for bottom-of-page access
+- [x] Edit wizard compact sticky action bar + smart header save visibility
+- [x] `coin_historical_background` ACF field (form, API payload, detail/review, safe HTML display)
+- [x] `coin_gallery_ids` audit gap patches (revision detection, meta clear, delete ordering)
+- [x] Status/visibility field patches (review summary, revision comparison, admin gating, activity logs)
+- [x] React year range validation (500 … current year + 1)
+- [x] Taxonomy fields: list-only select (no Other), option whitelist validation
+- [x] Submission flow UX hardening (double-submit guard, review taxonomy, inline edit success)
+- [x] Sticky wizard step tabs on tablet/desktop (horizontal nav below header)
+- [x] Tablet sticky toolbar polish (compact header, tab spacing, scroll-mt)
+- [x] Tablet wizard tab touch polish (48px pills, bolder type, active lift, fade hint)
+- [x] Tablet fixed bottom action bar (edit + new coin, safe-area, content padding)
+- [x] Image crop modal tablet layout (viewport-constrained, sticky footer, compact preview)
+- [x] Image crop modal initial fit-to-view (full image visible on open, Fit/Reset)
+- [x] Gallery touch actions (always-visible remove on tablet, corner button, a11y labels)
+- [x] Obverse/reverse thumbnail previews in image fields
+- [x] `stepCompletion.ts` — per-section complete/attention/empty logic
+- [x] `WizardStatusBar` — SaaS productivity strip in coin entry wizard
+- [x] Wizard step nav completion indicators (tablet pills + lg sidebar, a11y labels)
+- [x] `ImageWorkspaceSummary` — compact obverse/reverse/gallery strip below status bar
+- [x] Wizard productivity panel from `lg` (form + narrow sticky sidebar; left stepper `xl+` only)
+- [x] 1024px wizard layout polish (inset status bar/tabs/footer, wider form column)
+- [x] Action Center in right productivity panel (catalogue health, next action, quick jumps)
+- [x] Autosave v2 (`useCoinDraft`) — debounced local draft, step-change flush, status bar labels
+- [x] Autosave v2 save-storm fix — step ref guard, persist ref, image serialization cache
+- [x] Duplicate check perf — fingerprint skip, 1.2s debounce, list cache, valid year gate
+- [x] Duplicate warning tiering — drafts info-only, pending/published amber warning, rejected reference
+- [x] Admin dashboard mode — role-based login redirect, /admin routes, queue table, review detail
+- [x] Wizard fixed footer — full-viewport bar, centered max-width actions
+- [x] Step attention field/section highlighting — amber guidance on fields, section banners, Action Center issue text
+- [x] Mint repeater FormData — `mint_variants` sent as JSON string (snake_case rows)
+- [x] Mint mark select uses ACF codes (A/D/F/G/J) with city labels; legacy label → code mapping
+- [x] Dashboard completion % on saved drafts and recent submissions (compact inline + card variants)
+- [x] Saved drafts attention card — amber surface, unfinished badge, tone accent bars, Continue CTA
+- [x] Dashboard premium polish — 1280px content width, softer right rail, recent submissions hierarchy
+- [x] Coin entry wizard responsive layout — Action Center sidebar xl+ only, full-width below form on tablet
+- [x] Images step upload cards — vertical layout, 112px preview, xl 2-col grid, full-width CTA
+- [x] Images step iPad compact layout — md 2-col, 88px preview, smaller gallery tiles
+- [x] Form field visibility — field-control surface, focus ring, error/attention states, label hierarchy
+- [x] Historical background TipTap WYSIWYG (`RichTextField`) — bold/italic/lists/link, HTML save
+- [x] Wizard fixed footer polish — action bar surface, scroll padding, desktop helper text
+- [x] Wizard scroll padding only — footer styling reverted, pb-28/32 + safe-area retained
+
+- [x] Admin review split view - sticky review desk with readiness, field/image checklist, section jumps, and backend-honest decision controls
+- [x] Admin submission review queue polish — filter cards, search/sort, bulk actions, mobile cards with approve/reject UI
+- [x] Admin queue table premium redesign — rounded-[28px] card, row accent shadow bars, teal approve/danger-soft reject buttons, compact coin meta, result count, Reset filters
+- [x] Admin bulk coin import UX polish — parsing state, duplicate title detection, validation summary, import loading guard, result summary
+- [x] Admin import preview table layout — horizontal scroll, column min-widths, truncation
+- [x] Admin import failure clarity — error mapping, failure summary panel, coin_code guidance
+- [x] Admin import result row outcome fix — resolveImportRowOutcome, validParsedRows row mapping
+- [x] Coin ID preview ISO country codes — resolveCountryCode map + 2-letter fallback (DE/FR/IT not GER/FRA/ITA)
+- [x] Coin code preview format — release_date in coin_code, unique_code suffix preview, import template/review columns
+- [x] Coin code UI aligned with WP ACF — single full suffixed coin_code preview; unique_code legacy alias only
+- [x] Auto-generated SEO post title — review-step edit/regenerate, `titleManualOverride` in drafts
+- [x] SEO Post Title review card polish — compact status badge, generated-from chips, manual reset action
+- [x] Contributor duplicate detection warning — API hook, review warning card, pre-submit non-blocking check
+- [x] Duplicate check refreshes when final SEO title changes in Review step
+- [x] Duplicate check Review UI states — checking, no duplicate found, warning, unavailable
+- [x] Default obverse/reverse image loading skeletons — coin silhouette shimmer loader, fade-in, reduced-motion support
+- [x] Obverse/reverse "Use default" / "Remove image" clear actions — restores default preview without sending default IDs
+- [x] Image crop modal tablet/iPad polish — bounded workspace, sidebar controls, sticky footer, touch-friendly toolbar
+- [x] Review Submission step polish — card layout, Coin Code Preview, empty states, tablet grid
+- [x] Review Submission full audit — all CoinFormValues fields, image states, completeness indicator
+- [x] Contributor submission detail premium redesign — hero summary, compact faces, key facts, card sections, gallery grid, compact activity
+- [x] Shared SubmissionDetailLayout — contributor + admin review use same catalogue-style detail
+- [x] Auth API service — `/auth/*` endpoints, Bearer token, normalized error codes
+- [x] AuthContext — bootstrap `/auth/me`, session storage, login/logout/refresh
+- [x] Login page wired to AuthContext — `loginWithCredentials`, auth error messaging
+- [x] Register page wired to authApi — `registerAuthUser`, verification success state
+- [x] Verify email page — `/verify-email` route, POST `/auth/verify-email`
+- [x] Login resend verification — `resendAuthVerification` on EMAIL_NOT_VERIFIED
+- [x] Forgot / reset password pages — `/forgot-password`, `/reset-password`
+- [x] Auth route guards — ProtectedRoute, GuestRoute, AdminRoute via AuthContext
+- [x] Logout + profile UI wired to AuthContext (clears legacy + caes storage)
+- [x] Protected API pages use AuthContext token (submissions, coin forms, admin queue/import/approve, image autosave)
+- [x] Production deploy target `https://contribute.coinarchive.eu` (Vite base `/`, API at coinarchive.eu)
+- [x] Verify email page StrictMode-safe request handling (no stuck spinner)
+- [x] Admin approve page supports `pending_approval` contributor status
+- [x] Auth UI polish — verify email card layout, password show/hide, register strength meter
+- [x] Auth hardening — approved-only ProtectedRoute, login redirect-from, rejected login message, unified API base URL
+- [x] P0 submission workflow — `needs_revision` editable, edit draft restore preserved
+- [x] P1 `released_date` required validation, coin code readiness warnings, review submit guard
+- [x] WordPress admin decision API (plugin) — approve/reject/request-revision routes, `needs_revision` status, contributor resubmit
+- [x] Auth refresh fix — `/auth/me` normalizes `contributor` and `data.contributor`; AdminRoute waits for bootstrap
+- [x] P2 duplicate submission protection — EXACT_DUPLICATE blocks submit; SIMILAR_MATCH warning; review card above submit
+- [x] Backend duplicate publish guard — `caes_find_exact_duplicate` blocks admin approve + import rows
+- [x] Duplicate Review UI variants — compact card under SEO title + full card before submit hint
+- [x] Wizard preview image sync — shared obverse/reverse URL resolution for Images, Catalogue, and Specimen previews
+- [x] Bundle optimization — lazy route chunks, deferred cropper chunk, admin/import split from initial bundle
+- [x] Input data-quality layer — safe text cleanup, normalized duplicate-check/submit payloads, cleaned import rows
+- [x] Submission preview redesign — compact hero, larger coin images, earlier activity, pruned empty detail sections, cleaner admin review desk
+- [x] Submission preview polish — image zoom modal, section edit links, edit-step query support, activity moved lower, admin desk thumbnails
+- [x] Admin submission queue redesign — compact header stats, sticky filters, richer scan rows/cards, tablet-friendly layout
+- [x] Contributor My Submissions redesign — denser gallery grid, dual-face cards, readiness/timeline indicators, thumbnail table
+- [x] Submission detail image loading hardening — route fetch guard, shared face URL fallback, graceful image error placeholders
+- [x] Admin queue duplicate-risk visibility — exact/similar risk model, badges, stat filter, duplicate filter, risk-first sort
+- [x] Contributor dashboard workspace redesign — welcome hero, stats/approval rate, quick actions, draft progress, attention alerts
+- [x] Contributor dashboard refinement — grouped attention alerts, collapsible tips, denser activity/recent sections
+- [x] Dashboard draft deletion — local/server draft delete actions, confirmation dialog, immediate list/count refresh
+- [x] Activity Center responsive fix — truncating activity titles, non-shrinking status badges, compact stat grid
+- [x] Admin queue bulk moderation — select visible rows, bulk approve/reject/revision dialogs, progress, partial summary
+- [x] Contributor Notification Center — derived dashboard notifications, local read state, mark-all-read, expandable list
+- [x] Dashboard notification bell — dashboard-only dropdown, unread badge, shared local read state, Escape/outside close
+- [x] Contributor input correction chips — country, denomination, quality, and release date suggestions with review visibility
+- [x] Duplicate submit protection — exact title/backend exact flags block submit; similar matches remain allowed
+- [x] Admin queue productivity filters — summary cards, quick review chips, readiness badges, review-priority sort
+- [x] Admin detail review checklist — approval readiness score, required/recommended/risk groups, action guidance
+- [x] AI Writing Assistant phase 1 — prompt builder, mock provider, description generation UI, AI Assisted badge
+- [x] Gemini AI endpoint wiring — authenticated `/ai/descriptions` helper, provider mapping, dev-only mock fallback
+- [x] AI Generate All historical background — requests/maps `historical_background` into WYSIWYG state with fallback
+- [x] Release Date calendar picker — `react-day-picker` popover with `YYYY-MM-DD` storage and paste normalization
+- [x] Release Date fast navigation — month/year dropdowns plus Today, Current year, and Clear actions
+- [x] Release Date scroll/overlay fix — closes on scroll, uses `z-40`, and caps popover height
+- [x] Dashboard notification popover redesign — compact anchored panel, header/footer, internal scroll, focus trap
+- [x] Dashboard notification floating position — absolute under bell, `z-50`, no hero layout shift
+- [x] Dashboard notification portal — body portal, bell-rect positioning, scroll close, viewport clamp
+- [x] Specifications Step 4 presets — 2-Euro defaults, material chips, German quality labels, placeholders
+- [x] New coin 2-Euro default form values — prefilled specs for blank new forms only
+- [x] Review specifications display fallback — `getSpecificationDisplayValue` uses central 2-Euro defaults
+- [x] Bilingual UI (de/en) — i18next setup, DE default, localStorage persistence, language switcher, core screens translated
+- [x] Display-only coin/country labels — quality, coin type, and country slug helpers; API payloads unchanged
+- [x] Content language field — `content_language` (de/en) separate from UI language; Core Identity selector, review display, FormData payload
+- [x] Contributor UI i18n cleanup — profile, register success, drafts/activity, upload/crop labels, wizard messages, image preview states
+- [x] AI generation content language — prompts and UI buttons follow `content_language` (not UI language); fallback `de`
+- [x] AI German output guard — stronger prompt payload, DE fallback templates, retry once, block obvious English output
+- [x] Contributor-facing i18n audit — auth recovery, dashboard, wizard/review, detail/edit, image/crop, activity, and shared widgets
+- [x] AI response apply mapping — backend keys (`obverse_description`, etc.) explicitly map into React form fields; German guard avoids false blocks
+- [x] Content-language taxonomy options — form-options requests use `content_language`; New/Edit reload value/type terms and clear stale selections
+- [x] Taxonomy reload UX — Step 1 loading panel, value/type placeholders, stale option prevention, and edit submission loading state
+- [x] Async submit blocking — duplicate/form loading/draft save/AI generation states disable submit with clear labels and handler guard
+- [x] Content-language lock — submitted edit records keep original content language; only draft/new forms can switch language
+- [x] Review language confirmation + pending delete — review card/submit labels show content language; pending submissions use existing delete endpoint
+- [x] Admin language visibility — queue/detail show content language, translation status, and client-side DE/EN filter
+- [x] Admin queue default Pending filter — status/review default to pending, clear filters resets to pending, localized pending count text
+- [x] Edit EN submission language fix — top-level content_language mapping, load order, locked draft safety, slug-aware taxonomy match
+- [x] WordPress field sync — coin_designer, coin_issue_status, coin_source_*, coin_series taxonomy across form/review/detail/import
+- [x] Mint variants accordion UX — single-open rows, compact summary, trash remove, mintage clear, max 5 rows, primary Add mint row
+- [x] New WP fields payload audit — coin_series taxonomy resolve/submit, ACF field restore, source URL + issue status validation
+- [x] Contributor action button consistency — View/Edit/Delete icon+text, unified new/edit wizard footer
+- [x] Submission action button audit — actions.* i18n, shared ActionControls variants, admin icon polish
+- [x] 1300px responsive breakpoint — dashboard recent submissions + admin queue switch to stacked/card below 1300px; AdminQueueActionRow for compact admin actions
+- [x] Admin queue card polish — structured header/body/meta/footer, grouped action pill, status accent, i18n meta labels
+- [x] Admin queue table spacing — Activity/Actions 220px columns, flex-nowrap action row, desktop table at min-[1400px]
+- [x] Admin compact review card — header/body/meta chips/full-width 3-col action bar below 1400px
+- [x] Mint variant UX — marks-only mode, no default row, prepend add-row, drag-and-drop reorder
+- [x] Mint variant pointer drag — smooth lift/shadow, drop indicator, keyboard move up/down
+- [x] Mint submit cleanup — strip fully empty rows on pending submit; draft keeps empty rows
+- [x] Mint marks available uppercase normalization (live input + draft/submit)
+- [x] Coin form loading overlay — blocks interaction while taxonomy/options load or language switches
+- [x] Production bundle split — lazy wizard steps, dynamic xlsx, async i18n locales, vendor chunks
+- [x] Wizard sticky footer responsive fix — in-card footer below 1280px, no Action Center overlap
+- [x] Wizard tablet/iPad sticky dock footer — fixed bottom bar <1280px, scroll padding, step nav scroll, xl in-card footer
+- [x] Wizard tablet helper accordions — Action Center / preview / tips collapsed below xl; right rail unchanged at 1280+
+- [x] RichTextField TipTap crash fix — safe getHTML, mount guards, error boundary on coin wizard routes
+- [x] Series field help tooltip — rich i18n content, hover/click panel, future-ready fieldHelp structure
+- [x] Field help popup/modal — click-only portal dialog, desktop float >=1200px, modal below
+
+## In Progress
+- [ ] Manual smoke-test field help popup (desktop float, tablet/mobile modal, keyboard)
+
+## Pending Tasks
+- [ ] Manual smoke-test new fields in wizard, review, detail, admin detail, and import preview
+- [ ] Manual smoke-test EN edit: English locked language, EN taxonomy options, selected values preserved
+- [ ] Manual smoke-test admin queue opens on Pending, All shows everything, clear filters returns to Pending
+- [ ] Manual smoke-test admin queue DE/EN badge, translation status text, language filter, and admin detail language card
+- [ ] Manual smoke-test New DE/EN review language card, language-specific submit labels, pending delete dialog, and safe route after delete
+- [ ] Manual smoke-test New/Draft content language editable, Pending edit content language disabled, UI language switch does not change locked content language
+- [ ] Manual smoke-test duplicate-check loading disables Review submit, exact duplicate blocks submit, submit/update cannot double-click, and Save Draft shows saving
+- [ ] Manual smoke-test New/Edit coin type/value options reload for `content_language=de/en`, stale selections clear, and UI language switch does not reload options
+- [ ] Manual smoke-test DE obverse-only generation fills `coin_obverse_description`, DE Generate All fills all description fields, and "Design" in German text is accepted
+- [ ] Manual smoke-test DE/EN UI for Login, Register, Dashboard, New/Edit/Review, My Submissions, Detail, Profile, and notifications
+- [ ] Manual smoke-test notification portal is not hero-clipped, scroll closes, resize repositions, and mobile avoids overflow
+- [ ] Manual smoke-test notification popover opens without hero height change, aligns under bell, floats over content, and avoids mobile overflow
+- [ ] Manual smoke-test notification popover anchor, no hero-action overlap, internal scroll, read actions, Escape/outside close, focus trap, and mobile width
+- [ ] Manual smoke-test Release Date closes on page/container scroll, reopens near field, avoids sticky UI overlap, and keeps mobile usable
+- [ ] Manual smoke-test Release Date year 2004 jump, March select, date pick, quick actions, pasted normalization, mobile fit, and Escape close
+- [ ] Manual smoke-test Generate All fills Historical Background, warns on replacement, and handles backend omission fallback
+- [ ] Manual smoke-test Gemini endpoint 401, 501, successful generation, and hidden API key
+- [ ] Manual smoke-test AI assistant required-field gating, Generate All, regenerate warning, usage counter, and AI Assisted badge
+- [ ] Manual smoke-test admin detail checklist states, readiness score, duplicate warnings, actions, and mobile layout
+- [ ] Manual smoke-test admin queue summary cards, review filter chips, readiness badges, default sort, bulk actions, and mobile layout
+- [ ] Manual smoke-test exact duplicate red card, disabled submit, draft still allowed, and handler block
+- [ ] Manual smoke-test similar duplicate amber card, no-match green card, and own-submission link
+- [ ] Manual smoke-test Germany/denomination/quality/date normalization chips and review corrections
+- [ ] Manual smoke-test notification bell dropdown, Escape close, click navigation, and mark-all-read
+- [ ] Manual smoke-test notification links, mark-all-read, refresh persistence, and mobile layout
+- [ ] Manual smoke-test bulk selection, select-all visible, clear, partial failures, and mobile card selection
+- [ ] Manual smoke-test long recent activity titles with pending/status badges
+- [ ] Manual smoke-test delete/cancel/last-draft empty state and Continue Draft behavior
+- [ ] Manual smoke-test grouped Needs Attention cards and collapsible Quick Tips
+- [ ] Manual smoke-test dashboard CTAs, Continue Draft, needs-attention alerts, recent activity, and responsive layouts
+- [ ] Manual smoke-test admin queue duplicate-risk rows and confirm no extra duplicate API calls
+- [ ] Manual smoke-test gallery/table View navigation, back/open again, hard refresh, and missing-image fallbacks
+- [ ] Manual smoke-test My Submissions view/edit/delete actions, empty state, and no-image submissions
+- [ ] Manual smoke-test admin queue search, status/country filters, sorting, empty state, and Review links
+- [ ] Manual smoke-test redesigned contributor/admin submission preview at desktop and tablet widths
+- [ ] Manual smoke-test input cleanup on contributor forms and admin import preview
+- [ ] Manual smoke-test lazy routes/cropper chunks, then continue deployment checks
+- [ ] SaaS Phase 3.1: production smoke-test admin decisions + revision notes round-trip
+- [ ] SaaS Phase 3.2: admin bulk editing
+- [ ] Required-field validation patches (WP image required)
+- [ ] Gallery reorder (if product needs it)
+- [ ] Connect profile edit API
+- [ ] WordPress plugin integration (embed/build)
+- [ ] Backend admin revision notes + timeline date fields (static fallback when no activity_logs)
+- [ ] Dedicated duplicate-check API endpoint (currently client-side via my-submissions list)
+
+## Last Update
+2026-06-11 — Field help popup/modal system (portal, click-only, responsive)
